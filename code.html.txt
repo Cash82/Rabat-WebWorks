@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabat WebWorks - Premium Digital Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --secondary: #10B981;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-image {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.4));
+            z-index: 1;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-blue-500 text-3xl mr-2"></i>
+                            <span class="text-xl font-bold text-gray-800">Rabat WebWorks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-blue-500 px-3 py-2 font-medium">Home</a>
+                    <a href="#services" class="text-gray-800 hover:text-blue-500 px-3 py-2 font-medium">Services</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-500 px-3 py-2 font-medium">About Us</a>
+                    <a href="#portfolio" class="text-gray-800 hover:text-blue-500 px-3 py-2 font-medium">Portfolio</a>
+                    <a href="#testimonials" class="text-gray-800 hover:text-blue-500 px-3 py-2 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-500 px-3 py-2 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button p-2 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-xl">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 font-medium">Home</a>
+                <a href="#services" class="block px-3 py-2 font-medium">Services</a>
+                <a href="#about" class="block px-3 py-2 font-medium">About Us</a>
+                <a href="#portfolio" class="block px-3 py-2 font-medium">Portfolio</a>
+                <a href="#testimonials" class="block px-3 py-2 font-medium">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 font-medium">Contact</a>
+                <a href="#cta" class="block px-3 py-2 bg-blue-500 text-white rounded-md font-medium">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/971061c1-5435-41ab-ba7e-3a351c124a5d.png" alt="Modern digital workspace with multiple monitors showing analytics dashboards and project management tools" class="w-full h-full object-cover absolute top-0 left-0" />
+        <div class="relative z-10 h-full flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:w-1/2 text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Transform Your Digital Presence</h1>
+                    <p class="text-xl md:text-2xl mb-8">Rabat WebWorks delivers premium online services to elevate your brand. From web development to social media growth, we've got you covered.</p>
+                    <div class="flex space-x-4">
+                        <a href="#services" class="bg-white text-blue-500 hover:bg-gray-100 px-8 py-3 rounded-md font-bold transition duration-300">Our Services</a>
+                        <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-blue-500 px-8 py-3 rounded-md font-bold transition duration-300">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="gradient-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">500+</div>
+                    <div class="text-lg">Clients Worldwide</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">300+</div>
+                    <div class="text-lg">Projects Completed</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">95%</div>
+                    <div class="text-lg">Client Retention</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-lg">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Premium Services</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer comprehensive digital solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Website Development Service -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="feature-icon bg-blue-100 text-blue-500 mx-auto">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Website Development</h3>
+                        <p class="text-gray-600 text-center mb-4">Custom-designed websites that convert visitors into customers. Responsive, fast, and optimized for search engines.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Custom WordPress & Shopify Development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>E-commerce Solutions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>SEO Optimization</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md font-medium transition duration-300">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Social Media Growth Service -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="feature-icon bg-green-100 text-green-500 mx-auto">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Social Media Growth</h3>
+                        <p class="text-gray-600 text-center mb-4">Grow your Instagram, TikTok, and other social platforms with organic strategies that deliver real followers and engagement.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Instagram Growth Strategies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>TikTok Viral Content Creation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Audience Engagement Tactics</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md font-medium transition duration-300">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Digital Marketing Service -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="feature-icon bg-purple-100 text-purple-500 mx-auto">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Digital Marketing</h3>
+                        <p class="text-gray-600 text-center mb-4">Comprehensive digital marketing strategies to increase your online visibility and drive targeted traffic to your business.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>SEO & Content Marketing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>PPC Advertising</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Conversion Rate Optimization</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-md font-medium transition duration-300">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9145d841-3829-48a7-8748-66156993842e.png" alt="Diverse team of digital professionals collaborating in a modern office space with laptops and whiteboards" class="rounded-lg shadow-xl w-full h-auto" />
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Why Choose Rabat WebWorks?</h2>
+                    <div class="w-20 h-1 bg-blue-500 mb-6"></div>
+                    <p class="text-gray-600 mb-6">Rabat WebWorks is a premier digital services agency owned and operated by Eyad El Rabat, dedicated to helping businesses thrive online. Our expert team combines cutting-edge technology with proven strategies to deliver results that matter.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Expert Team</h3>
+                                <p class="text-gray-600">Our specialists have years of experience in digital marketing, web development, and social media growth.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Custom Solutions</h3>
+                                <p class="text-gray-600">We don't believe in one-size-fits-all. Every strategy is tailored to your specific business needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Proven Results</h3>
+                                <p class="text-gray-600">We measure everything and optimize based on data to ensure maximum ROI for your investment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Recent Work</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Take a look at some of our successful projects and campaigns</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/46c7df27-2f77-40df-befe-f044e23a057a.png" alt="Modern e-commerce website for fashion brand with clean product displays and seamless checkout process" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">E-Commerce Website</h3>
+                            <p class="text-gray-200 mb-4">Complete online store for fashion brand with integrated payment solutions.</p>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md font-medium">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6719c7a4-6e01-4c4a-b2e6-20fe60afe8a7.png" alt="Instagram profile dashboard showing analytics for a beauty brand with substantial follower growth and engagement metrics" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Instagram Growth</h3>
+                            <p class="text-gray-200 mb-4">500% follower growth for beauty brand in 6 months.</p>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md font-medium">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b3850a6c-d75a-4bee-9f94-62b5b51f583f.png" alt="Digital marketing campaign dashboard displaying impressive conversion rates and return on ad spend for a SaaS company" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Digital Marketing</h3>
+                            <p class="text-gray-200 mb-4">3x ROI on ad spend for SaaS company marketing campaign.</p>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md font-medium">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-gray-800 hover:bg-gray-900 text-white py-3 px-8 rounded-md font-medium transition duration-300">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our satisfied clients have to say about working with us.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bb897586-85e8-49a1-824f-3de5c75ea5ed.png" alt="Sarah Johnson, marketing director at TechCorp, smiling confidently" class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-500">Marketing Director, TechCorp</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"Rabat WebWorks transformed our online presence! Our website traffic has increased by 300% and our conversion rates are through the roof. Highly recommend their services."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4a929193-595d-4b62-b384-4e0b9852c25c.png" alt="Michael Rodriguez, founder of StyleTrend, looking professional in a business setting" class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Rodriguez</h4>
+                            <p class="text-gray-500">Founder, StyleTrend</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"The Instagram growth service has been phenomenal. We went from 2k to 50k followers in just 6 months, and the engagement is incredible. Worth every penny!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8228f4f2-41ef-49f1-ab2e-7ff66fc55107.png" alt="Aisha Thompson, CEO of HealthPlus, speaking at a conference" class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Aisha Thompson</h4>
+                            <p class="text-gray-500">CEO, HealthPlus</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"We hired Rabat WebWorks for a complete digital overhaul, and they exceeded all expectations. Their team is professional, responsive, and delivers outstanding results."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Grow Your Business Online?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Get your free strategy session today and discover how Rabat WebWorks can help you achieve your digital goals.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-white text-blue-500 hover:bg-gray-100 px-8 py-4 rounded-md font-bold text-lg transition duration-300 animate-pulse">Get Started Now</a>
+                <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-blue-500 px-8 py-4 rounded-md font-bold text-lg transition duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">How quickly will I see results?</h3>
+                    <p class="text-gray-600">Results vary depending on the service and your industry. Website projects typically launch within 4-8 weeks. Digital marketing campaigns start showing initial results within the first 30 days, with full impact by month 3. Social media growth is more gradual, with visible increases in followers starting around week 4.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">What's included in your web development packages?</h3>
+                    <p class="text-gray-600">Our website development packages include custom design, responsive development, SEO optimization, basic content creation, CMS setup, security configuration, and training. We also provide 3 months of post-launch support and minor adjustments included in all packages.</p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Do you work with international clients?</h3>
+                    <p class="text-gray-600">Absolutely! About 60% of our clients are international. We accommodate different time zones with flexible meeting schedules and communicate primarily through email, video calls, and project management tools to keep everyone aligned.</p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">How do you ensure Instagram growth is organic?</h3>
+                    <p class="text-gray-600">We strictly adhere to organic growth strategies that focus on high-quality content, strategic hashtag use, audience engagement, and influencer partnerships. We never use bots or fake followers, ensuring your audience growth is genuine and sustainable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <div class="w-20 h-1 bg-blue-500 mb-6"></div>
+                    <p class="text-gray-600 mb-8">Ready to take your digital presence to the next level? Fill out the form and we'll get back to you within 24 hours.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Email Us</h3>
+                                <p class="text-gray-600">contact@rabatwebworks.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Call Us</h3>
+                                <p class="text-gray-600">+20 111 996 8833</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Visit Us</h3>
+                                <p class="text-gray-600">Capital Business Park<br>Cairo, Sheikh Zayed, Egypt</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <form id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
+                                <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Service</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Social Media Growth">Social Media Growth</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Consultation">Consultation</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-md font-bold transition duration-300">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Rabat WebWorks</h3>
+                    <p class="text-gray-400 mb-2">Premium digital services to grow your business online. Expert solutions tailored to your needs.</p>
+                    <p class="text-gray-500 text-sm">Owned and operated by Eyad El Rabat</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Web Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Social Media Growth</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Digital Marketing</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">SEO Optimization</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-500 transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <form class="mt-2">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none w-full" />
+                            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r-md text-white">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left mb-4 md:mb-0">© 2025 Rabat WebWorks. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .testimonial-card');
+            
+            elements.forEach(el => {
+                const elPosition = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elPosition < windowHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease';
+        });
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Trigger once on page load
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
